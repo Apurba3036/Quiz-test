@@ -1,9 +1,3 @@
-// ........................Blog click another HTML.......................
-document.getElementById('btn-blog').addEventListener('click',function(){
-  window.location.href= 'myans.html';
-})
-
-// global variable declaration
 let count = 0;
 let timer;
 let quizData;
@@ -50,7 +44,7 @@ startQuiz.addEventListener("click", () => {
 
 // All quiz data fetched from json
 const loadQuiz = async () => {
-  const res = await fetch("./data/quiz.json");
+  const res = await fetch("quiz.json");
   const data = await res.json();
   quizData = data;
   displayQuiz(data);
