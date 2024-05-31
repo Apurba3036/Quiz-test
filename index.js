@@ -1,3 +1,8 @@
+// ........................Blog click another HTML.......................
+document.getElementById('btn-blog').addEventListener('click',function(){
+  window.location.href= 'myans.html';
+})
+
 // global variable declaration
 let count = 0;
 let timer;
@@ -71,10 +76,10 @@ const displayQuiz = (data) => {
   </div>
 </div>`;
   });
-
+};
 
 // EventListener for quiz submit button
-document.getElementById("submit").addEventListener("click", function() {
+document.querySelector("#submit").addEventListener("click", () => {
   if (answers.length < 6) {
     return;
   }
@@ -108,7 +113,7 @@ document.getElementById("submit").addEventListener("click", function() {
   }
 
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+  let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
     localStorage.setItem(
       "results",
@@ -121,7 +126,8 @@ document.getElementById("submit").addEventListener("click", function() {
         },
       ])
     );
-  } else {
+  } 
+  else {
     localStorage.setItem(
       "results",
       JSON.stringify([
@@ -182,6 +188,4 @@ document.getElementById("submit").addEventListener("click", function() {
     clearTimeout(x);
   }, 1500);
   window.scrollTo(0, 0);
-})
-
-};
+});
